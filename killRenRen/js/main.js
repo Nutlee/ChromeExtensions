@@ -12,11 +12,15 @@ document.addEventListener('DOMContentLoaded', function () {
 		// });
 		var idata= {
 			"url":"http://status.renren.com/",
-			"order": "delete",
-			"msg":""
+			"order": "delete"
 		}
 		chrome.runtime.sendMessage(idata, function(response) {
-			document.write(response.msg);
+			var obj=document.getElementById("result");
+			document.getElementById("main").style.display="none";
+			with (obj) {
+				style.display="block";
+				getElementsByTagName("h3")[0].innerHTML=response.msg;	
+			}
 		});
 	})
 });
@@ -32,3 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // 	messagePoc("111");
 // }
 // goStatusHtml("http://status.renren.com/");
+
+document.getElementById("return").addEventListener("click", function() {
+	
+})

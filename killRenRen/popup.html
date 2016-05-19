@@ -8,18 +8,53 @@
 }
 
 body {
+	position: relative;
     width: 200px;
     height: 100px;
+    background-color: #eee;
 }
-
+.wrap {
+	margin: 20px 10px;
+	text-align: center;
+}
+.wrap button {
+	width: 60px;
+	height: 30px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	outline: none;
+	cursor: pointer;
+}
+.wrap-result {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+.wrap-result h3 {
+	text-align: center;
+}
 </style>
 </head>
 <body>
-<div id="killdialog">
-	<p>确定删除人人网状态？（此操作不可撤销）</p>
-	<button id="certain">确定</button>
-	<button id="cancel">取消</button>
-</div>
+	<div id="main">
+		<div class="wrap">
+			<h3>确定删除人人网状态？（此操作不可撤销）</h3>
+		</div>
+		<div class="wrap">
+			<button id="certain">确定</button>
+			<button id="cancel">取消</button>	
+		</div>
+	</div>
+	<div class="wrap-result" id="result">
+		<div class="wrap">
+			<h3>成功！</h3>
+		</div>
+		<div class="wrap">
+			<button id="certain">返回</button>
+			<button id="cancel">取消</button>	
+		</div>		
+	</div>
 <script src="js/main.js"></script>
 </body>
 </html>
